@@ -4,6 +4,15 @@ function main() {
 
 
     var vertices = [
+        // HURUF K
+         0.0, 0.2,
+        0.0, -0.2,
+        0.0, 0.0,
+        0.2, -0.2,
+
+        0.0, 0.0,
+        0.2, 0.2,
+        
         // angka 2
         0.2, 0.42,
         0.2, 0.3,
@@ -79,21 +88,29 @@ function main() {
 
     // membuat warna backgroun
     gl.clearColor(1.0, 1.0, 1.0, 1.0);
-    gl.enable(gl.DEPTH_TEST); // cuman beda ini
+    gl.enable(gl.DEPTH_TEST); 
     // mengosongkan canvas
     gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.viewport(0, 0, canvas.width, canvas.height); // cuman beda ini
-    // mulai menggambar
+    gl.viewport(0, 0, canvas.width, canvas.height); 
+   
+    // MULAI MENGGAMBAR
+    
+     // Huruf K
+    gl.drawArrays(gl.LINES, 0, 4);
+    gl.drawArrays(gl.LINES, 4, 2);
+
+    // // mulai menggambar
     // gl.drawArrays(gl.LINE_STRIP, 0, 6);
 
     // Angka 2
-    gl.drawArrays(gl.LINE_LOOP, 0, 15);
+    gl.drawArrays(gl.LINE_LOOP, 6, 15);
 
     // ANGKA 3
-    gl.drawArrays(gl.LINE_LOOP, 15, 19);
+    gl.drawArrays(gl.LINE_LOOP, 21, 19);
 
     // HURUF A
-    gl.drawArrays(gl.TRIANGLE_FAN, 34, 12);
-    gl.drawArrays(gl.TRIANGLE_FAN, 46, 6);
+    gl.drawArrays(gl.TRIANGLE_FAN, 40, 12);
+    gl.drawArrays(gl.TRIANGLE_FAN, 52, 6);
+
 
 };
